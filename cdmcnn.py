@@ -3,10 +3,11 @@
 #
 # Pytorch implementation of: 
 #    COLOR IMAGE DEMOSAICKING VIA DEEP RESIDUAL LEARNING
+#    Tan, Runjie and Zhang, Kai and Zuo, Wangmeng and Zhang, Lei
 #    2017 IEEE International Conference on Multimedia and Expo (ICME)
 # 
-# Copyright (c) 2019 adapted by Gabriele Facciolo
-# derived from the demosaicnet code Copyright (c) 2016 Michael Gharbi
+# Copyright (c) 2019 Gabriele Facciolo
+# derived from Demosaicnet code Copyright (c) 2016 Michael Gharbi
 # 
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"), to deal
