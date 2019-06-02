@@ -202,7 +202,7 @@ def CDMCNN_pretrained(savefile=None, verbose=False):
 
     
     ### download the pretained weights
-    mat_model_URL = 'https://github.com/csrjtan/CDM-CNN/blob/4c91fc1c3bb82490b3e5371a515807774f7e0da1/src/model_10.mat'
+    mat_model_URL = 'https://github.com/csrjtan/CDM-CNN/raw/4c91fc1c3bb82490b3e5371a515807774f7e0da1/src/model_10.mat'
     mat_model_fname = 'CDM-CNN_model_10.mat'
     try:
         os.stat(here+'/'+mat_model_fname)
