@@ -146,7 +146,11 @@ def demosaick(net, M):
 
     M = th.from_numpy(M).to(device=dev, dtype=th.float)
 
+    start = time.time()
+
     out, outG = net( M )
+
+    tot_time_ref = time.time()-start
 
     out= out.cpu().detach().numpy()
     outG= outG.cpu().detach().numpy()
@@ -157,8 +161,10 @@ def demosaick(net, M):
     out[0,2,1::2,0::2] = M[0,2,1::2,0::2]
     out[0,1,1::2,1::2] = M[0,1,1::2,1::2]
     
+    tot_time_ref *= 1000
+    print("Time  {:.0f} ms".format(tot_time_ref))
 
-    return out, 0
+    return out, tot_time_ref
 
 
 
@@ -281,6 +287,7 @@ def main(args):
         file_psnr = open(args.output_psnr, 'w')
         file_psnr.write(str(p))
         file_psnr.close()
+        print ('  PSNR = {:.1f} dB, time = {} ms'.format(p, int(runtime)))
     else:
         print ('  - raw image without groundtruth, bypassing metric')
     out = _float2uint(R, dtype)
