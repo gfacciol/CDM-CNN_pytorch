@@ -54,7 +54,6 @@ def _psnr(a, b, crop=0, maxval=1.0):
 
     d = np.mean(np.square(aa-bb))
     d = -10*np.log10(d/(maxval*maxval))
-    print(d)
     return d
 
 
@@ -235,7 +234,6 @@ def main(args):
     #im = np.expand_dims(im, 0) 
     # the othe field is just the mask
     M = np.array(M)[:1,:,:,:]
-
 
 
     with th.no_grad():
