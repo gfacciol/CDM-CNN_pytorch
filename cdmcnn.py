@@ -247,6 +247,7 @@ def main(args):
     
     R = R.squeeze().transpose(1, 2, 0)
     R = R.clip(0,1)
+    M = M.transpose((2,3,1,0)).squeeze()
     
     # Remove the padding
     if crop > 0:
