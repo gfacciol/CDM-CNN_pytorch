@@ -291,7 +291,7 @@ def CDMCNN_pretrained(savefile=None, verbose=False):
     layers[i-1].weight = torch.nn.Parameter( dtype( np.reshape(w.transpose(TRANSPOSE_PATTERN) , layers[i-1].weight.shape) ) ) 
 
 
-    ################# SENCOND PART
+    ################# SECOND PART
 
     layers = m.step2.layers
 
