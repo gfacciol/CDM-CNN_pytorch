@@ -208,10 +208,10 @@ def CDMCNN_pretrained(savefile=None, verbose=False):
         os.stat(here+'/'+mat_model_fname)
     except OSError:
         print('downloading pretrained model')
-        urllib.request.urlretrieve(mat_model_URL, mat_model_fname)
+        urllib.request.urlretrieve(mat_model_URL, here+'/'+mat_model_fname)
 
     # read the matlab file
-    mat = hdf5storage.loadmat(mat_model_fname)
+    mat = hdf5storage.loadmat(here+'/'+mat_model_fname)
 
     # load all weights from the matlab file 
     mcn_weights={}
