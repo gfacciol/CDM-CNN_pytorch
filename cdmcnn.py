@@ -207,7 +207,7 @@ def main(args):
         Iref = np.power(Iref, 1.0/2.2)
 
     if len(Iref.shape) == 2:
-        # Offset the image to match the our mosaic pattern
+        # Offset the image to match to the mosaic pattern
         if args.offset_x > 0:
             print ('  - offset x')
             # Iref = Iref[:, 1:]
@@ -291,9 +291,11 @@ def main(args):
     else:
         print ('  - raw image without groundtruth, bypassing metric')
     out = _float2uint(R, dtype)
+    out_mosaicked = _float2uint(M, dtype)
     
     # Write output image
     skimage.io.imsave(args.output, out)
+    skimage.io.imsave(args.output_mosaicked, out_mosaicked)
 
     
 if __name__ == "__main__":
@@ -301,8 +303,9 @@ if __name__ == "__main__":
 
     parser.add_argument('--input', type=str, default='input.png', help='path to input image.')
     parser.add_argument('--net_path', type=str, default=None, help='path to model folder.')
-    parser.add_argument('--output', type=str, default='output', help='path to output image.')
-    parser.add_argument('--output_psnr', type=str, default='output', help='path to output psnr.')
+    parser.add_argument('--output', type=str, default='output.png', help='path to output image.')
+    parser.add_argument('--output_mosaicked', type=str, default='cfa.png', help='path to output image.')
+    parser.add_argument('--output_psnr', type=str, default='psnr.txt', help='path to output psnr.')
     parser.add_argument('--offset_x', type=int, default=0, help='number of pixels to offset the mosaick in the x-axis.')
     parser.add_argument('--offset_y', type=int, default=0, help='number of pixels to offset the mosaick in the y-axis.')
     parser.add_argument('--gpu', dest='gpu', action='store_true', help='use the GPU for processing.')
