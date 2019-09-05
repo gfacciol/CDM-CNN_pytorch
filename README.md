@@ -6,7 +6,7 @@ Pytorch implementation (using pretrained weights) of:
 
 based on [CDM-CNN](https://github.com/csrjtan/CDM-CNN)
 
-This code was created to reproduce the results of CDM-CNN for this publication
+This code was created to [reproduce the results of CDM-CNN for this publication](https://doi.org/10.5201/ipol.2019.274)
 
     T. Ehret, and G. Facciolo, "A Study of Two CNN Demosaicking Algorithms", 
     Image Processing On Line, 9 (2019), pp. 220–230. https://doi.org/10.5201/ipol.2019.274
